@@ -1,0 +1,12 @@
+---
+title: 'Autenticação'
+description: 'Veja como autenticar sua aplicação e ter acesso à API da CentralCart.'
+---
+
+1. Primeiramente acesse [Configurações -> Integrações](https://app.centralcart.com.br/settings/plugin).
+2. Selecione o jogo que deseja integrar e copie a sua **chave privada**.
+3. Use o header `Authorization` nas requisições e passe o token Bearer acompanhado da sua chave privada.
+
+```bash
+'Authorization': 'Bearer <private-key>'
+```

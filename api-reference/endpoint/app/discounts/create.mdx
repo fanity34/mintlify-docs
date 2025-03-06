@@ -1,0 +1,50 @@
+---
+title: "Create Discount"
+api: "POST https://api.centralcart.com.br/v1/app/discount/"
+authMethod: "bearer"
+description: "Cria um cupom de desconto."
+---
+
+<ParamField body="coupon" type="string" required>
+  O cupom que será criado
+</ParamField>
+
+<ParamField body="applies_to" type="number[]" required>
+  Lista de ID dos produtos em que o cupom poderá ser aplicado
+</ParamField>
+
+<ParamField body="type" type="string" required>
+  O tipo do desconto, podendo ser `PRICE` ou `PERCENTAGE`
+</ParamField>
+
+<ParamField body="value" type="number" required>
+  O valor do desconto
+</ParamField>
+
+<ParamField body="max_uses" type="number">
+  A quantidade máxima de usos que o desconto pode ter
+</ParamField>
+
+<ParamField body="expires_in" type="date">
+  A data de expiração do desconto
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "id": 3361,
+  "store_id": 1,
+  "coupon": "50OFF",
+  "type": "PERCENTAGE",
+  "value": 5,
+  "applies_to": [10,11],
+  "uses": 0,
+  "max_uses": null,
+  "expires_in": "2024-10-16T00:00:00.000-03:00",
+  "created_at": "2023-05-10T21:47:17.000-03:00",
+  "updated_at": "2023-09-14T12:04:46.000-03:00"
+}
+```
+
+</ResponseExample>

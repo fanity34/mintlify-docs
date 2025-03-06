@@ -1,0 +1,27 @@
+---
+title: "User Spent"
+api: "GET https://api.centralcart.com.br/v1/app/user_spent"
+authMethod: "bearer"
+description: "Retorna o valor gasto por um usuário."
+---
+
+<ParamField query="client_identifier" type="string">
+  Retorna o gasto do usuário pelo seu identificador
+</ParamField>
+
+<ParamField query="email" type="string">
+  Retorna o gasto do usuário pelo seu email
+</ParamField>
+
+<Warning>É obrigatório informar ao menos um parâmetro de busca neste recurso.</Warning>
+
+<ResponseExample>
+
+```json Response
+{
+  "total_net_received": 240,
+  "total_gross_received": 250
+}
+```
+
+</ResponseExample>

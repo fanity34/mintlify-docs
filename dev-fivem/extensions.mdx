@@ -1,0 +1,74 @@
+---
+title: 'Criar novos comandos'
+description: 'Veja como você pode criar seus próprios comandos.'
+---
+
+## Introdução
+
+Para maior flexibilidade, a CentralCart fornece suporte para criação de comandos personalizados em ``.js`` e em ``.lua``.
+
+1. Na pasta do script da CentralCart, localize e entre na pasta `extensions`;
+2. Você encontrará 2 arquivos de exemplo. Você pode utilizar qualquer um deles ou criar um novo;
+3. Crie um handler para o evento `centralcart.ready` e use o export da CentralCart para registrar os comandos.
+
+### Boilerplate para criação de comando:
+<CodeGroup>
+
+  ```lua extension.lua
+  AddEventHandler("centralcart.ready", function()
+    local CentralCart = exports[GetCurrentResourceName()] -- Importando as funções da CentralCart
+
+    CentralCart:registerCommand("examplelua", function() -- Cadastre um novo comando ou sobrescreva um comando já existente
+      print("Comando de exemplo em lua")
+
+      return "OK"
+    end)
+  end)
+  ```
+
+  ```javascript extension.js
+  on("centralcart.ready", () => {
+    const CentralCart = exports[GetCurrentResourceName()]
+
+    CentralCart.registerCommand("examplejs", () => {
+      console.log("Comando de exemplo em javascript")
+
+      return "OK"
+    })
+  })
+  ```
+
+</CodeGroup>
+
+## Usando funções vRP em comandos custom
+
+1. Instancie a variável `vRP` no arquivo da sua extensão;
+2. Carregue o server_script `@vrp/lib/utils.lua` no fxmanifest.lua do script da CentralCart.
+
+<CodeGroup>
+
+```lua extension.lua
+local Proxy = module("vrp", "lib/Proxy")
+local vRP = Proxy.getInterface("vRP")
+
+AddEventHandler("centralcart.ready", function() 
+  local CentralCart = exports[GetCurrentResourceName()]
+
+  -- addPremium {client_identifier}
+  CentralCart:registerCommand("addPremium", function(user_id)
+    if not vRP.UserPremium(user_id) then
+      vRP.SetPremium(user_id)
+    end
+  end)
+end)
+```
+
+```lua fxmanifest.lua
+server_script { 
+  '@vrp/lib/utils.lua' -- Adicione esta linha
+  'src/loader.js',
+  'extensions/**',
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,95 @@
+---
+title: Configuração
+description: 'Nesse guia mostraremos as propriedades da configuração do nosso script.'
+---
+
+- `token` **->** o token é usado para o script estabelecer a conexão com a sua loja
+- `framework`**->** defina se o script irá detectar automaticamente ou usar uma framework específica. veja em [opções](#opcoes)
+- `commands`
+  - `vip` **->** defina qual comando será utilizado para ver os benefícios temporários do jogador
+- `game`
+  - `vehicle_table` **->**  defina qual tabela de veículos será utilizada
+  - `homes_table` **->**  defina qual tabela de casas será utilizada
+- `chat`
+  - `enabled` **->** se ativo, o script irá enviar uma mensagem global no chat
+  - `message` **->** a mensagem que será enviada para todos os jogadores
+  - `style` **->** o código css para personalização da mensagem global
+- `notification` **->** configure quais serão os comandos usados in-game
+  - `enabled` **->** se ativo, o script irá exibir uma notificação na tela do comprador
+  - `type` **->** o tipo da notificação. veja as [opções](#notificacoes)
+  - `content`
+    - `title` **->** a mensagem que será exibida para o comprador
+    - `position` **->** a posição na tela que irá aparecer. veja as [opções](#opcoes)
+- `debug` **->** opção para ver logs de depuração
+
+
+## Opções
+
+<AccordionGroup>
+  <Accordion title="Frameworks disponíveis">
+    `vrp`, `vrp-creative_3`, `vrp-creative_4`, `vrp-creative_5`, `vrp-creative_network`, `qbcore`, `vrp-default`
+
+    - `auto` **->** o sistema tentará detectar qual framework você utiliza
+    - `blank` **->** use caso nenhuma acima seja o seu caso
+  </Accordion>
+
+  <Accordion title="Posições da notificação">
+    ```
+    top-left              top-right
+
+
+    center-left           center-right
+
+
+    bottom-left           bottom-right
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Notificações
+O script tem duas notificações in-game, Default e Party, ambos você pode ativar na configuração do script.
+
+<Tabs>
+  <Tab title="Default">
+    Ative a notificação **Default** substituindo a configuração por:
+
+    ```js    
+    notification: {
+      enabled: true,
+      type: "default", 
+      content: {
+        title: "A compra de {packages} foi concluída!",
+        position: "top-right", 
+      },
+    },
+    ```
+
+    <Frame>
+      ![Notificação in-game](/images/fivem/noti.png)
+    </Frame>
+  </Tab>
+
+  <Tab title="Party">
+    Ative a notificação **Party** substituindo a configuração por:
+    ```js
+    notification: {
+      enabled: true,
+      type: "party",
+      content: {
+        title: "A compra de {packages} foi concluída!",
+        subtitle: "Obrigado por ajudar a cidade!",
+      },
+    },
+    ```
+
+    <Frame>
+      ![Notificação in-game](/images/fivem/noti2.png)
+    </Frame>
+  </Tab>
+</Tabs>
+
+<Check>
+  Se você tiver qualquer dúvida, entre em contato com a nossa equipe de suporte
+  em nosso [WhatsApp](https://api.whatsapp.com/send/?phone=5515992647447&text=Ol%C3%A1%2C+tenho+d%C3%BAvidas+sobre+a+CentralCart&type=phone_number&app_absent=0) 
+  e [Discord](https://centralcart.com.br/discord).
+</Check>

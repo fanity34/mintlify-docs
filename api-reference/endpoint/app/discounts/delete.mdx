@@ -1,0 +1,20 @@
+---
+title: "Delete Discount"
+api: "DELETE https://api.centralcart.com.br/v1/app/discount/{discount-id}"
+authMethod: "bearer"
+description: "Deleta um cupom de desconto."
+---
+
+<ParamField path="discount-id" type="string" required>
+  O ID do desconto a ser deletado 
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Desconto deletado com sucesso!"
+}
+```
+
+</ResponseExample>

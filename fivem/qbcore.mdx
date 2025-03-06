@@ -1,0 +1,70 @@
+---
+title: Como configurar QBcore em sua loja
+description: 'Nesse guia mostraremos algumas informações sobre a framework QBCore.'
+---
+
+## Guia em vídeo
+
+<iframe
+  width="100%"
+  height="422"
+  src="https://www.youtube.com/embed/2DQVBMdG7-0?si=KEOeX9D2g8cQPrw9"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+<Note>
+  Se você tiver qualquer problema para instalar o script em sua base, por favor, 
+  entre em contato com a  nossa equipe de suporte em nosso 
+  [Discord](https://centralcart.com.br/discord) ou 
+  [WhatsApp](https://wa.me/5511937597270?text=Ol%C3%A1,%20tenho%20d%C3%BAvidas%20sobre%20a%20CentralCart).
+</Note>
+
+## Alteração variável do checkout
+A framework QBCore não utiliza o ID padrão, por isso, para funcionar corretamente, será necessário alterar a variável do checkout para Citizen ID.
+
+1. Para isso acesse:  [Configurações -> Variáveis de checkout](https://app.centralcart.com.br/settings).
+2. Selecione a variável para realizar a alteração.
+3. Altere o tipo para **Texto** e a descrição para **Seu Citizen ID**.
+
+<Frame>
+  ![Variável do checkout](/images/fivem/qbcore-checkout.png)
+</Frame>
+
+<Warning>
+  O tipo **texto** permitirá que o jogador utilize números e letras no checkout de pagamento.
+</Warning>
+
+## Comandos
+Além dos comandos padrão que vem na configuração do produto, você pode adicionar um salário para o jogador e remove-lo.
+
+O primeiro comando é:
+``salary {client_identifier} quantidade``
+
+<Frame>
+  ![Comando para adicionar o salário](/images/fivem/comando.png)
+</Frame>
+
+<Check>
+  O jogador recebe o salário a cada 10 minutos online no servidor.
+</Check>
+
+O segundo comando é: ``removeSalary {client_identifier}``
+
+<Frame>
+  ![Comando para remover o salário](/images/fivem/comando-remover.png)
+</Frame>
+
+## Instalação
+
+A instalação é feita da mesma forma que as outras frameworks. Nosso script detectará automaticamente que você está usando QBCore.
+
+<Card
+  title="Instalação no FiveM"
+  icon="download"
+  href="/fivem/instalacao"
+>
+  Entrega de VIPs, veículos, gemas, itens automaticamente.
+</Card>

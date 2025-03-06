@@ -1,0 +1,59 @@
+---
+title: "Top Customers"
+api: "GET https://api.centralcart.com.br/v1/app/widget/top_customers"
+authMethod: "bearer"
+description: "Retorna a lista dos top compradores."
+---
+
+<ParamField query="from" type="string" required>
+  Data de início para a busca. Ex. `2024-12-01`
+</ParamField>
+
+<ParamField query="to" type="string" required>
+  Data de término para a busca. Ex: `2024-12-30`
+</ParamField>
+
+<Info>Este recurso lista os 10 maiores compradores ordenados pelo valor gasto.</Info>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "username": "Oliver",
+      "spent": "R$ 350,00",
+      "purchases": 1,
+      "identifier": "1"
+    },
+    {
+      "username": "Aysha",
+      "spent": "R$ 300,00",
+      "purchases": 1,
+      "identifier": "2"
+    }
+    {
+      "username": "Fred",
+      "spent": "R$ 250,00",
+      "purchases": 1,
+      "identifier": "3"
+    }
+    {
+      "username": "Peterson",
+      "spent": "R$ 200,00",
+      "purchases": 1,
+      "identifier": "4"
+    }
+    {
+      "username": "Christine",
+      "spent": "R$ 150,00",
+      "purchases": 1,
+      "identifier": "5"
+    }
+  ],
+  "from": "2024-12-01T03:00:00.000Z",
+  "to": "2024-12-30T03:00:00.000Z"
+}
+```
+
+</ResponseExample>

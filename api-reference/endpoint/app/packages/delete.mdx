@@ -1,0 +1,20 @@
+---
+title: "Delete Package"
+api: "DELETE https://api.centralcart.com.br/v1/app/package/{package-id}"
+authMethod: "bearer"
+description: "Deleta um pacote."
+---
+
+<ParamField path="package-id" type="string" required>
+  O ID do pacote a ser deletado 
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Pacote deletado com sucesso."
+}
+```
+
+</ResponseExample>

@@ -1,0 +1,73 @@
+---
+title: "Resend Commands"
+api: "POST https://api.centralcart.com.br/v1/app/order/{order-id}/command/resend"
+authMethod: "bearer"
+description: "Reenvia os comandos de um pedido."
+---
+
+<ParamField path="order-id" type="string" required>
+  O ID do pedido
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Todos os comandos foram re-adicionados na fila.",
+  "commands": [
+    {
+      "id": 2661245,
+      "store_id": 2,
+      "order_package_id": 374914,
+      "game_server_id": null,
+      "user_id": "1",
+      "tries": 1,
+      "command": "addGroup 1 Ouro",
+      "status": "PENDING",
+      "response": null,
+      "reason": null,
+      "offline_execute": false,
+      "execute_at": "2024-09-09T20:16:03.000-03:00",
+      "created_at": "2024-09-09T20:16:03.000-03:00",
+      "updated_at": "2024-09-09T20:16:03.000-03:00",
+      "game_server": null
+    },
+    {
+      "id": 2661246,
+      "store_id": 2,
+      "order_package_id": 374914,
+      "game_server_id": null,
+      "user_id": "1",
+      "tries": 0,
+      "command": "removeGroup 1 Ouro",
+      "status": "PENDING",
+      "response": null,
+      "reason": null,
+      "offline_execute": false,
+      "execute_at": "2025-03-08T20:16:03.000-03:00",
+      "created_at": "2024-09-09T20:16:03.000-03:00",
+      "updated_at": "2024-09-09T20:16:03.000-03:00",
+      "game_server": null
+    },
+    {
+      "id": 2661247,
+      "store_id": 2,
+      "order_package_id": null,
+      "game_server_id": null,
+      "user_id": "1",
+      "tries": 1,
+      "command": "userNotify 1 bE9GTvID3Pou",
+      "status": "PENDING",
+      "response": null,
+      "reason": null,
+      "offline_execute": false,
+      "execute_at": "2024-09-09T20:16:03.000-03:00",
+      "created_at": "2024-09-09T20:16:03.000-03:00",
+      "updated_at": "2024-09-09T20:16:03.000-03:00",
+      "game_server": null
+    }
+  ]
+}
+```
+
+</ResponseExample>

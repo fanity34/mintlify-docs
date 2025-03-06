@@ -1,0 +1,39 @@
+---
+title: 'Alterar inserts'
+description: 'Veja como você pode modificar dados inseridos pelo nosso script.'
+---
+
+## Introdução
+
+Nosso sistema permite que o usuário modifique os dados inseridos por scripts em tempo de execução, antes que sejam armazenados no banco de dados. Veja os exemplos abaixo.
+
+### Exemplos:
+<CodeGroup>
+
+  ```lua merge
+  AddEventHandler('centralcart.insert', function(table, data, insert)
+    if table == 'vehicles' then
+      insert.merge({
+        Weight = 1000 -- Adiciona 1000 no valor do porta-malas dos carros
+      })
+    end
+  end)
+  ```
+
+  ```lua delete
+  AddEventHandler('centralcart.insert', function(table, data, insert)
+    if table == 'vehicles' then
+      insert.delete('Tax') -- Deleta o campo Tax que o script adiciona por padrão
+    end
+  end)
+  ```
+
+  ```lua replace
+  AddEventHandler('centralcart.insert', function(table, data, insert)
+    if table == 'vehicles' then
+      insert.replace('Tax', os.time() + 86400 * 30) -- Altera o campo Tax adicionando 30 dias a partir da data atual
+    end
+  end)
+  ```
+
+</CodeGroup>

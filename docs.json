@@ -1,35 +1,60 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "CentralCart",
   "colors": {
-    "primary": "#16A34A",
+    "primary": "#0D9373",
     "light": "#07C983",
-    "dark": "#15803D"
+    "dark": "#0D9373"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/centralcart-icon.png",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentação",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Bem-vindo",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "introduction"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Geral",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "pagamentos",
+              "general/usar-meu-dominio",
+              "discord"
+            ]
+          },
+          {
+            "group": "Integrações:",
+            "pages": [
+              "produto-digital",
+              "fivem-intro",
+              "redm",
+              "minecraft",
+              "mta"
+            ]
+          },
+          {
+            "group": "Empresa",
+            "pages": [
+              "suporte",
+              "faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "FiveM Development",
+        "groups": [
+          {
+            "group": "FiveM Development",
+            "pages": [
+              "dev-fivem/extensions",
+              "dev-fivem/custom-chat",
+              "dev-fivem/change-inserts"
             ]
           }
         ]
@@ -38,18 +63,63 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Documentação da API",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/authentication"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Endpoints de aplicação",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/app/get",
+              {
+                "group": "Comandos",
+                "pages": [
+                  "api-reference/endpoint/app/commands/queued",
+                  "api-reference/endpoint/app/commands/user-queue",
+                  "api-reference/endpoint/app/commands/user-schedules",
+                  "api-reference/endpoint/app/commands/update"
+                ]
+              },
+              {
+                "group": "Pacotes",
+                "pages": [
+                  "api-reference/endpoint/app/packages/list",
+                  "api-reference/endpoint/app/packages/create",
+                  "api-reference/endpoint/app/packages/update",
+                  "api-reference/endpoint/app/packages/delete"
+                ]
+              },
+              {
+                "group": "Descontos",
+                "pages": [
+                  "api-reference/endpoint/app/discounts/list",
+                  "api-reference/endpoint/app/discounts/create",
+                  "api-reference/endpoint/app/discounts/update",
+                  "api-reference/endpoint/app/discounts/delete"
+                ]
+              },
+              {
+                "group": "Pedidos",
+                "pages": [
+                  "api-reference/endpoint/app/orders/get",
+                  "api-reference/endpoint/app/orders/update",
+                  "api-reference/endpoint/app/orders/resend-commands"
+                ]
+              },
+              {
+                "group": "Checkout",
+                "pages": [
+                  "api-reference/endpoint/app/checkout/create"
+                ]
+              },
+              {
+                "group": "Utilities",
+                "pages": [
+                  "api-reference/endpoint/app/utilities/get-top-customers",
+                  "api-reference/endpoint/app/utilities/get-user-spent"
+                ]
+              }
             ]
           }
         ]
@@ -58,19 +128,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Nosso Discord",
+          "href": "https://centralcart.com.br/discord",
+          "icon": "discord"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "anchor": "Nosso YouTube",
+          "href": "https://www.youtube.com/@CentralCartBR",
+          "icon": "youtube"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Siga no Instagram",
+          "href": "https://www.instagram.com/centralcartbr/",
+          "icon": "instagram"
         }
       ]
     }
@@ -82,21 +152,23 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Suporte",
+        "href": "https://centralcart.com.br/discord"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.centralcart.com.br"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://centralcart.com.br/discord",
+      "youtube": "https://www.youtube.com/channel/UCt8ijxO7MN6Y4ipzvNskeiA",
+      "instagram": "https://www.instagram.com/centralcartbr",
+      "facebook": "https://www.facebook.com/centralcartbr/",
+      "twitter": "https://twitter.com/centralcartbr"
     }
   }
 }

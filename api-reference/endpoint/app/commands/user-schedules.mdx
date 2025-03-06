@@ -1,0 +1,88 @@
+---
+title: "User Schedules"
+api: "GET https://api.centralcart.com.br/v1/app/user_schedules/{user-id}"
+authMethod: "bearer"
+description: "Retorna a lista de comandos a serem executados futuramente"
+---
+
+<ParamField path="user-id" type="string" required>
+  O ID, nickname ou identificador do cliente.
+</ParamField>
+
+### Response
+
+<ResponseField name="id" type="number">
+  O ID do comando
+</ResponseField>
+
+<ResponseField name="store_id" type="string">
+  O ID da loja
+</ResponseField>
+
+<ResponseField name="command" type="string">
+  O comando a ser manipulado e executado
+</ResponseField>
+
+<ResponseField name="offline_execute" type="boolean">
+  Se "true", o comando será executado mesmo com o jogador offline
+</ResponseField>
+
+<ResponseField name="order" type="Order Object">
+  <Expandable title="properties" defaultOpen={true}>
+    <ResponseField name="client_identifier" type="string">
+      O identificador do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_email" type="string">
+      O e-mail do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_name" type="string">
+      O nome do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_discord" type="string | null">
+      O Discord ID do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="internal_id" type="string">
+      O ID interno do pedido usado para obter informações detalhadas, se necessário
+    </ResponseField>
+    <ParamField body="variables" type="object[]">
+      Retorna variáveis de checkout e o valor preenchido
+      <Expandable title="properties">
+        <ParamField body="name" type="string">
+          Nome da variável
+        </ParamField>
+        <ParamField body="value" type="string">
+          Valor da variável
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ResponseField>
+
+<ResponseExample>
+
+```json Response
+[
+  {
+    "id": 2331253,
+    "store_id": 1,
+    "user_id": "1",
+    "command": "removeGroup 1 Ouro",
+    "offline_execute": false,
+    "execute_at": "2024-08-04T18:54:16.000-03:00",
+    "order": {
+      "client_email": "support@centralcart.com.br",
+      "client_name": "Central Cart",
+      "client_discord": null,
+      "internal_id": "bCHSQZVv313B",
+      "variables": [
+        {
+          "name": "client_identifier",
+          "value": "1"
+        },
+      ]
+    }
+  }
+]
+```
+
+</ResponseExample>

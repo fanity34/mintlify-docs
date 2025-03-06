@@ -1,0 +1,64 @@
+---
+title: Instalação no Minecraft
+description: 'Nosso plugin permite a automatização da entrega dos seus produtos.'
+---
+
+<iframe
+  width="100%"
+  height="422"
+  src="https://www.youtube.com/embed/o7g25pB4AHY?si=u7K3xjDB4cW8-8Gh"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+<Note>
+  Se você tiver qualquer problema para instalar o plugin em seu servidor, por favor, 
+  entre em contato com a  nossa equipe de suporte em nosso 
+  [Discord](https://centralcart.com.br/discord) ou 
+  [WhatsApp](https://wa.me/5511937597270?text=Ol%C3%A1,%20tenho%20d%C3%BAvidas%20sobre%20a%20CentralCart).
+</Note>
+
+## Baixar o plugin
+
+1. Faça login no seu [painel de controle](https://app.centralcart.com.br).
+2. Navegue até [Configurações -> Integrações -> Conectar ao Minecraft](https://app.centralcart.com.br/settings/plugin/minecraft).
+3. Agora, basta clicar em **download** que o plugin será baixado diretamente para o seu computador.
+
+<Frame>
+  ![Baixar o plugin no seu servidor](/images/minecraft/plugin-minecraft.png)
+</Frame>
+
+## Criando token
+1. Clique no botão **novo servidor** e adiciona o nome que ficará vinculando ao token e clique em criar servidor.
+
+<Frame>
+  ![Criando token](/images/minecraft/criar-novo-servidor.png)
+</Frame>
+
+2. Pronto, o token que você utilizará para conectar o plugin com o seu site está criado.
+
+## Configurando o plugin
+
+1. Adicione o plugin da CentralCart em seu servidor.
+2. Reinicie ou ligue o servidor para o plugin carregar.
+3. Após o plugin ser iniciado, uma pasta de configuração será gerado. 
+
+<Frame>
+  ![Plugin Minecraft](/images/minecraft/plugin-folder.png)
+</Frame>
+
+4. Acesse a pasta CentralCart e edite o arquivo properties.
+5. Apaga a mensagem **token-da-sua-loja** e adicione o token da sua loja.
+
+```yaml properties.yml
+secret: 26e5fdfa-b555-4bca-9b72-08e53ba47830
+```
+
+<Note>
+  Você pode configurar o token por comando também, basta digitar o 
+  seguinte comando no console do seu servidor: `/centralcart token 26e5fdfa-b555-4bca-9b72-08e53ba47830`
+
+  No lugar do token acima, você coloca o token da sua loja.
+</Note>

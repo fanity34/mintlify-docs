@@ -1,0 +1,52 @@
+---
+title: "Application Details"
+api: "GET https://api.centralcart.com.br/v1/app"
+authMethod: "bearer"
+description: "Obtém informações sobre a sua loja."
+---
+
+### Response
+
+<ResponseField name="id" type="number">
+  O ID da sua loja
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  O nome da sua loja
+</ResponseField>
+
+<ResponseField name="plan" type="string">
+  O plano da sua loja
+</ResponseField>
+
+<ResponseField name="overdue_date" type="string">
+  A data expiração da sua assinatura
+</ResponseField>
+
+<ResponseField name="url" type="string">
+  A url da sua loja
+</ResponseField>
+
+<ResponseField name="logo" type="string">
+  A logo da sua loja
+</ResponseField>
+
+<ResponseField name="primary_color" type="string">
+  A cor primária da sua loja em hexadecimal
+</ResponseField>
+
+<ResponseExample>
+
+```json Response
+{
+  "id": 1,
+  "name": "Tema Source",
+  "plan": "RICH",
+  "overdue_date": "2032-08-10T18:57:32.000-03:00",
+  "url": "https://demo.centralcart.com.br",
+  "logo": "https://cdn.centralcart.com.br/stores/1/theme/824a0dfe-efcc-419b-b1c7-92808f2db8be.png",
+  "primary_color": "#6a5acd"
+}
+```
+
+</ResponseExample>

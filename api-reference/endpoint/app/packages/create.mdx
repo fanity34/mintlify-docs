@@ -1,0 +1,136 @@
+---
+title: "Create Package"
+api: "POST https://api.centralcart.com.br/v1/app/package/"
+authMethod: "bearer"
+description: "Cria um novo pacote."
+---
+
+<ParamField body="name" type="string" required>
+  O nome do pacote
+</ParamField>
+
+<ParamField body="description" type="string" optional>
+  A descrição detalhada do pacote
+</ParamField>
+
+<ParamField body="category_id" type="number" required>
+  O ID da categoria à qual o pacote pertence
+</ParamField>
+
+<ParamField body="enabled" type="boolean" optional>
+  Define se o pacote está habilitado ou não
+</ParamField>
+
+<ParamField body="price" type="number" required>
+  O preço do pacote, entre 0 e 1.000.000.
+</ParamField>
+
+<ParamField body="expiry_days" type="number" optional>
+  Número de dias para expiração do pacote, entre 1 e 365
+</ParamField>
+
+<ParamField body="type" type="string" required>
+  Tipo do pacote: `SINGLE` ou `MULTIPLE`
+</ParamField>
+
+<ParamField body="inventory_amount" type="number" optional>
+  A quantidade de estoque disponível para o pacote, entre 1 e 999.999
+</ParamField>
+
+<ParamField body="per_user_limit" type="boolean" optional>
+  Define se há um limite por usuário para adquirir o pacote
+</ParamField>
+
+<ParamField body="image" type="string" optional>
+  URL da imagem do pacote
+</ParamField>
+
+<ParamField body="commands" type="object[]" optional>
+  Lista de comandos associados ao pacote
+  <Expandable title="properties">
+    <ParamField body="type" type="string">
+      Tipo do comando (`PURCHASE`, `EXPIRY`, `REFUND`, `CHARGEBACK`)
+    </ParamField>
+    <ParamField body="command" type="string">
+      O comando a ser executado (máximo 500 caracteres)
+    </ParamField>
+    <ParamField body="game_server_id" type="number" optional>
+      ID do servidor de jogo (obrigatório para lojas do tipo `MINECRAFT`)
+    </ParamField>
+    <ParamField body="offline_execute" type="boolean" optional>
+      Indica se deve ser executado offline (obrigatório para lojas do tipo `MINECRAFT`)
+    </ParamField>
+    <ParamField body="schedule" type="number" optional>
+      Dias agendados para executar o comando, entre 1 e 365
+    </ParamField>
+    <ParamField body="execute_once" type="boolean" optional>
+      Define se o comando deve ser executado uma única vez
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="discord_actions" type="object[]" optional>
+  Ações no Discord associadas ao pacote.
+  <Expandable title="properties">
+    <ParamField body="type" type="string">
+      Tipo de ação (`PURCHASE`, `EXPIRY`, `REFUND`, `CHARGEBACK`)
+    </ParamField>
+    <ParamField body="action" type="string">
+      Ação executada (`ADD_ROLE`, `REMOVE_ROLE`, `SEND_MESSAGE`, `ADD_BAN`, `REMOVE_BAN`)
+    </ParamField>
+    <ParamField body="parameters" type="object">
+      Parâmetros associados à ação
+      <Expandable title="properties">
+        <ParamField body="role_id" type="string" optional>
+          ID do cargo (obrigatório para `ADD_ROLE`)
+        </ParamField>
+        <ParamField body="channel_id" type="string" optional>
+          ID do canal (obrigatório para `SEND_MESSAGE`)
+        </ParamField>
+        <ParamField body="message" type="string" optional>
+          Mensagem enviada (obrigatória para `SEND_MESSAGE`, máximo 500 caracteres)
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="variables" type="number[]" optional>
+  IDs das variáveis associadas ao pacote
+</ParamField>
+
+<ParamField body="email" type="object" optional>
+  Informações do email enviado ao adquirir o pacote
+  <Expandable title="properties">
+    <ParamField body="title" type="string">
+      Título do email
+    </ParamField>
+    <ParamField body="content" type="string">
+      Conteúdo do email
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="license_keys" type="string[]" optional>
+  Lista de chaves de licença associadas ao pacote (máximo 300 chaves, 250 caracteres cada)
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+  "id": 101,
+   "store_id": 1,
+  "name": "Pacote VIP",
+  "category_id": 5,
+  "price": 50,
+  "expiry_days": 30,
+  "type": "SINGLE",
+  "inventory_amount": 100,
+  "position": 1,
+  "slug": "pacote-vip",
+  "created_at": "2023-11-18T14:00:00.000Z",
+  "updated_at": "2023-11-18T14:00:00.000Z"
+}
+```
+</ResponseExample>

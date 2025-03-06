@@ -1,0 +1,79 @@
+---
+title: Como configurar o sistema de pix in-game
+description: 'Nesse guia iremos mostrar como configurar o plugin para integrar o pix no servidor.'
+---
+
+## Como funciona o plugin?
+O sistema tem o intuito de facilitar a compra de beneficios in-game, otimizando a experiência do jogador e impulsionando a taxa de conversão.
+
+<Frame>
+  ![QRCODE do pix](/images/minecraft/pix.png)
+</Frame>
+
+## Baixar o plugin
+
+1. Faça login no seu [painel de controle](https://app.centralcart.com.br).
+2. Navegue até [Configurações -> Integrações -> Conectar ao Minecraft](https://app.centralcart.com.br/settings/plugin/minecraft).
+3. Agora, basta clicar em **outros downloads** e seleciona **CentralCart-Pix** que o plugin será baixado diretamente para o seu computador.
+
+<Frame>
+  ![Baixar o plugin no seu servidor](/images/minecraft/pix-minecraft.png)
+</Frame>
+
+<Note>
+O plugin para integração com pix in-game só irá funcionar, se o plugin principal da Central estiver instalado em seu servidor.
+</Note>
+
+## Configuração do plugin
+
+1. Adicione o plugin da CentralCart em seu servidor.
+2. Reinicie ou ligue o servidor para o plugin carregar.
+3. Após o plugin ser iniciado, uma pasta de configuração será gerado.
+
+<Frame>
+  ![QRCODE do pix](/images/minecraft/plugins.png)
+</Frame>
+
+4. Acesse a pasta **CentralCart-Pix** e edite o arquivo **config.yml**.
+
+## Exemplo de configuração
+
+<Frame>
+  ![menu](/images/minecraft/menu-pix.png)
+</Frame>
+
+```yml
+Categories:
+  vips-1: # Slug da categoria
+    Slot: 1 # Posição do slot onde a categoria será exibida
+    ID: 388 # ID do item que representa a categoria
+    Data: 0
+    Name: '&aVIPs' #Nome da Categoria
+    Lore: # Descrição da categoria
+      - ''
+      - '&eClique para selecionar.'
+    Products:
+      vip-esmeralda: # Slug do produto
+        Slot: 28 # Posição do slot onde a categoria será exibida
+        ID: 351 # ID do item que representa o produto
+        Data: 10
+        Name: '&4&lVIP Imperador' # Nome do produto
+        Lore: # Descrição do produto
+          - '&cPemanente'
+          - ''
+          - '&a✔ &7Voar;'
+          - '&a✔ &7Criar clans;'
+          - '&a✔ &7/comercio para criar seu ponto de comércio;'
+          - '&a✔ &7/chapeu para colocar itens na cabeça.'
+          - ''
+          - '&7Preço: &a<value>' # Variável para o preço automático
+          - ''
+          - '&eClique para comprar.'
+        Advantages: # Descrição da vantagens do produto
+          - '     &a&lVIP &c(X)'
+          - ''
+          - '&a✔ &7Voar no Lobby'
+          - '&a✔ &7Cosméticos'
+          - '&a✔ &7Skin Customizada'
+          - '&c✖ &7Poder abusar'
+```

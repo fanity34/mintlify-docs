@@ -1,0 +1,45 @@
+---
+title: 'Personalizar mensagem do chat'
+description: 'Veja como você pode customizar o envio da notificação no chat.'
+---
+
+## Introdução
+
+1. Na pasta do script da CentralCart, localize e entre na pasta `extensions`;
+2. Você encontrará 2 arquivos de exemplo. Você pode utilizar qualquer um deles ou criar um novo;
+3. Crie um handler para o evento `centralcart.ready` e use o export da CentralCart para registrar o chat.
+
+### Exemplo:
+<CodeGroup>
+
+  ```lua extension.lua
+  AddEventHandler("centralcart.ready", function()
+    local CentralCart = exports[GetCurrentResourceName()] -- Importando as funções da CentralCart
+
+    CentralCart:chat(function (message, source, packages)
+      print('Mensagem ' .. message) -- Player comprou 1x VIP Inicial, 50x Coins na nossa loja!
+      print('Source ' .. source) -- 1
+      print('Array dos pacotes ' .. json.encode(packages)) -- ["1x VIP Inicial", "50x Coins"]
+
+      TriggerClientEvent('chat:addMessage', -1, {
+        args = { "Loja", message }
+      })
+    end)
+  end)
+  ```
+
+  ```javascript extension.js
+  on("centralcart.ready", () => {
+    const CentralCart = exports[GetCurrentResourceName()]
+
+    CentralCart.chat((message, source, packages) => {
+      console.log('Mensagem', message) // Player comprou 1x VIP Inicial, 50x Coins na nossa loja!
+      console.log('Source', source) // 1
+      console.log('Array dos pacotes', packages) // ["1x VIP Inicial", "50x Coins"]
+
+      emitNet("chat:addMessage", -1, {args: [message]})
+    })
+  })
+  ```
+
+</CodeGroup>

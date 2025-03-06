@@ -1,0 +1,51 @@
+---
+title: "List Package"
+api: "GET https://api.centralcart.com.br/v1/app/package"
+authMethod: "bearer"
+description: "Retorna a lista de pacotes criados."
+---
+
+<ResponseExample>
+
+```json Response
+{
+  "meta": {
+    "total": 1,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1,
+    "first_page": 1,
+    "first_page_url": "/?page=1",
+    "last_page_url": "/?page=1",
+    "next_page_url": null,
+    "previous_page_url": null
+  },
+  "data": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "store_id": 1,
+      "position": 1,
+      "enabled": true,
+      "name": "Bronze",
+      "type": "MULTIPLE",
+      "price": 30,
+      "expiry_days": 30,
+      "inventory_amount": null,
+      "description": null,
+      "slug": "bronze",
+      "image": null,
+      "created_at": "2024-01-31T16:03:28.000-03:00",
+      "updated_at": "2024-01-31T16:03:28.000-03:00",
+      "per_user_limit": false,
+      "commands": [],
+      "discord_actions": [],
+      "emails": [],
+      "license_keys": [],
+      "price_display": "R$ 30,00"
+    }
+  ]
+}
+```
+
+</ResponseExample>

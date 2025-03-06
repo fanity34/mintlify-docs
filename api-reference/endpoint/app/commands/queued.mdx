@@ -1,0 +1,124 @@
+---
+title: "Queued Commands"
+api: "GET https://api.centralcart.com.br/v1/app/queued_commands"
+authMethod: "bearer"
+description: "Obtém os comandos aguardando para serem executados."
+---
+
+### Response
+
+<ResponseField name="id" type="number">
+  O ID do comando
+</ResponseField>
+
+<ResponseField name="store_id" type="string">
+  O ID da loja
+</ResponseField>
+
+<ResponseField name="command" type="string">
+  O comando a ser manipulado e executado
+</ResponseField>
+
+<ResponseField name="offline_execute" type="boolean">
+  Se "true", o comando será executado mesmo com o jogador offline
+</ResponseField>
+
+<ResponseField name="order" type="Order Object">
+  <Expandable title="properties" defaultOpen={true}>
+    <ResponseField name="client_identifier" type="string">
+      O identificador do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_email" type="string">
+      O e-mail do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_name" type="string">
+      O nome do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="client_discord" type="string | null">
+      O Discord ID do cliente fornecido na finalização da compra
+    </ResponseField>
+    <ResponseField name="internal_id" type="string">
+      O ID interno do pedido usado para obter informações detalhadas, se necessário
+    </ResponseField>
+    <ParamField body="variables" type="object[]">
+      Retorna variáveis de checkout e o valor preenchido
+      <Expandable title="properties">
+        <ParamField body="name" type="string">
+          Nome da variável
+        </ParamField>
+        <ParamField body="value" type="string">
+          Valor da variável
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ResponseField>
+
+<ResponseExample>
+
+```json Response
+[
+  {
+    "id": 1813415,
+    "store_id": 1,
+    "command": "addGroup 1 Ouro",
+    "offline_execute": false,
+    "execute_at": "2024-01-28T15:08:57.000-03:00",
+    "order": {
+      "client_identifier": "1",
+      "client_email": "support@centralcart.com.br",
+      "client_name": "Central Cart",
+      "client_discord": null,
+      "internal_id": "c7ce903c0e1c24e94796aa3a08be68b19100dcc6",
+      "variables": [
+        {
+          "name": "client_identifier",
+          "value": "1"
+        },
+      ]
+    }
+  },
+  {
+    "id": 1813417,
+    "store_id": 1,
+    "command": "addVehicle 1 brioso",
+    "offline_execute": false,
+    "execute_at": "2024-01-28T15:08:57.000-03:00",
+    "order": {
+      "client_identifier": "1",
+      "client_email": "support@centralcart.com.br",
+      "client_name": "Central Cart",
+      "client_discord": null,
+      "internal_id": "c7ce903c0e1c24e94796aa3a08be68b19100dcc6",
+      "variables": [
+        {
+          "name": "client_identifier",
+          "value": "1"
+        },
+      ]
+    }
+  },
+  {
+    "id": 1813419,
+    "store_id": 1,
+    "command": "userNotify 1 c7ce903c0e1c24e94796aa3a08be68b19100dcc6",
+    "offline_execute": false,
+    "execute_at": "2024-01-28T15:08:57.000-03:00",
+    "order": {
+      "client_identifier": "1",
+      "client_email": "support@centralcart.com.br",
+      "client_name": "Central Cart",
+      "client_discord": null,
+      "internal_id": "c7ce903c0e1c24e94796aa3a08be68b19100dcc6",
+      "variables": [
+        {
+          "name": "client_identifier",
+          "value": "1"
+        },
+      ]
+    }
+  }
+]
+```
+
+</ResponseExample>

@@ -1,0 +1,64 @@
+---
+title: "Create Checkout"
+api: "POST https://api.centralcart.com.br/v1/app/checkout"
+authMethod: "bearer"
+description: "Cria um pedido e retorna os detalhes do checkout."
+---
+
+<ParamField body="gateway" type="string" required>
+  Gateway usado para gerar o checkout: `PIX`, `MERCADOPAGO`, `STRIPE`, `PAYPAL`, `PICPAY`
+</ParamField>
+
+<ParamField body="client_email" type="string" required>
+  Email do comprador ao qual o pedido será vinculado.
+</ParamField>
+
+<ParamField body="client_name" type="string" required>
+  Nome do comprador.
+</ParamField>
+
+<ParamField body="terms" type="boolean" required>
+  Aceite/recusa dos termos.
+</ParamField>
+
+<ParamField body="variables" type="object" required>
+  <Expandable title="properties">
+    <ParamField body="client_identifier" type="string">
+      Identificador do comprador.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="cart" type="object[]">
+  <Expandable title="properties">
+    <ParamField body="package_id" type="number">
+      ID do pacote.
+    </ParamField>
+
+    <ParamField body="quantity" type="number">
+      Quantidade do pacote.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="coupon" type="string">
+  Cupom de desconto.
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "checkout_url": "https://example.com"
+}
+```
+
+```json Response PIX
+{
+  "pix_code": "00020126580014br.gov.bcb.pix013675174272...",
+  "qr_code": "iVBORw0KGgoAAAANSUhEUgAABRQAAAUUAQAAAACGnaNFAAANzElEQVR4Xu2YTXLcyA4G6...",
+  "return_url": "https://sualoja.centralcart.com.br/order/id"
+}
+```
+
+</ResponseExample>

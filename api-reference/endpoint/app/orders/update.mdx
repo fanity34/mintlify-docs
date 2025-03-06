@@ -1,0 +1,74 @@
+---
+title: "Update Order"
+api: "PATCH https://api.centralcart.com.br/v1/app/order/{order-id}"
+authMethod: "bearer"
+description: "Atualiza um pedido."
+---
+
+<ParamField path="order-id" type="string" required>
+  O ID do pedido a ser atualizado
+</ParamField>
+
+<ParamField body="status" type="string">
+  Um dos seguintes: `APPROVED` ou `REFUNDED`
+</ParamField>
+
+<ParamField body="client_identifier" type="string">
+  O identificador do comprador
+</ParamField>
+
+<ParamField body="client_discord" type="string">
+  O Discord ID do comprador
+</ParamField>
+
+<ParamField body="variables" type="string">
+  Valor de variáveis de checkout
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "store_id": 2,
+  "client_identifier": "12345",
+  "client_email": "support@centralcart.com",
+  "client_name": "Central",
+  "client_document": null,
+  "client_phone": null,
+  "client_discord": "000000000000000000",
+  "price": 100,
+  "net_received": 0,
+  "internal_id": "bE9GTvID3Pou",
+  "external_id": "2HnFQyFdGBM3",
+  "promo_code": null,
+  "promo_type": null,
+  "promo_value": null,
+  "gateway": "PIX",
+  "payment_method": null,
+  "status": "PENDING",
+  "metadata": null,
+  "manually_created": 0,
+  "manually_refunded": 0,
+  "manually_approved": 0,
+  "paid_at": null,
+  "created_at": "2024-09-04T15:44:47.000-03:00",
+  "updated_at": "2024-09-04T15:44:47.000-03:00",
+  "currency": "BRL",
+  "variables": [
+    {
+      "id": 105328,
+      "store_id": 2,
+      "order_id": 356925,
+      "name": "client_identifier",
+      "value": "12345",
+      "created_at": "2024-09-04T15:44:47.000-03:00",
+      "updated_at": "2024-09-04T15:44:47.000-03:00"
+    }
+  ],
+  "price_display": "R$ 1,00",
+  "status_display": "PENDENTE",
+  "gateway_display": "Pix"
+}
+```
+
+</ResponseExample>

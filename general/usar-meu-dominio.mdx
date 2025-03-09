@@ -3,28 +3,21 @@ title: Usar meu domínio
 description: 'Neste guia, mostraremos como adicionar um domínio próprio em sua loja.'
 ---
 
-## Guia em vídeo
-
-<iframe
-  width="100%"
-  height="422"
-  src="https://www.youtube.com/embed/Rh8uAi02HTE?si=N4j-9Asl255dED00"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
-
 ## Adicione seu domínio na sua Loja
 
 1. Navegue até [Configurações -> Domínio](https://app.centralcart.com.br/settings/domain).
-2. Procure por **vincular domínio** e adiciona o seu dominio. 
+2. Procure por **Vincular Domínio**, adicione seu domínio e, se desejar, um subdomínio.
 
 <Frame>
 ![Vinculando domínio](/images/shared/dominio.png)
 </Frame>
 
 3. Pronto, agora basta criar 2 registros, o primeiro **CNAME** e o segundo **TXT**.
+
+<Warning>
+Se for utilizar o dominio, sem um subdominio. Certifique-se de que a empresa onde você registrou seu domínio oferece suporte para o uso do @,
+Caso contrário, o CNAME será convertido em ALIAS.
+</Warning>
 
 ## Criando registro
 Nesse exemplo, iremos fazer o apontamento utilizando o site da Cloudflare mas você pode utilizar outras plataformas para fazer o redirecionamento para o seu site. 

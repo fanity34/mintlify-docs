@@ -170,5 +170,8 @@
       "facebook": "https://www.facebook.com/centralcartbr/",
       "twitter": "https://twitter.com/centralcartbr"
     }
+  },
+  "seo": {
+    "indexing": "all"
   }
 }

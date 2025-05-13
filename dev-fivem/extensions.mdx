@@ -11,14 +11,18 @@ Para maior flexibilidade, a CentralCart fornece suporte para criação de comand
 2. Você encontrará 2 arquivos de exemplo. Você pode utilizar qualquer um deles ou criar um novo;
 3. Crie um handler para o evento `centralcart.ready` e use o export da CentralCart para registrar os comandos.
 
+Para mais informações sobre como agendar comandos para serem executados quando um jogador se conecta, veja a [documentação de schedule](/dev-fivem/schedule).
+
 ### Boilerplate para criação de comando:
 <CodeGroup>
 
   ```lua extension.lua
   AddEventHandler("centralcart.ready", function()
-    local CentralCart = exports[GetCurrentResourceName()] -- Importando as funções da CentralCart
+    -- Importando as funções da CentralCart
+    local CentralCart = exports[GetCurrentResourceName()]
 
-    CentralCart:registerCommand("examplelua", function() -- Cadastre um novo comando ou sobrescreva um comando já existente
+    -- Cadastre um novo comando ou sobrescreva um comando já existente
+    CentralCart:registerCommand("examplelua", function()
       print("Comando de exemplo em lua")
 
       return "OK"
@@ -56,6 +60,16 @@ AddEventHandler("centralcart.ready", function()
 
   -- addPremium {client_identifier}
   CentralCart:registerCommand("addPremium", function(user_id)
+    local source = vRP.getUserSource(user_id)
+
+    -- Verificamos se o jogador está offline
+    if not source then
+      -- Aqui criamos um agendamento, isso vai fazer o comando ser 
+      -- executado assim que o player se conectar ao servidor
+      CentralCart:schedule(user_id, { "addPremium", user_id })
+      return "OK (Scheduled)"
+    end
+
     if not vRP.UserPremium(user_id) then
       vRP.SetPremium(user_id)
     end

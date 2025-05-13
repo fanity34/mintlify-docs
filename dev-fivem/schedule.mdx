@@ -1,0 +1,32 @@
+---
+title: Agendar comandos
+description: Agenda comandos para serem executados quando um jogador se conecta ao servidor
+---
+
+# Agendamento
+
+A função `schedule` permite agendar comandos para serem executados quando um jogador se conecta ao servidor. Isso é particularmente útil quando você precisa executar comandos para jogadores que estão offline no momento.
+
+
+## Parâmetros
+
+| Parâmetro | Tipo | Descrição |
+|-----------|------|-------------|
+| user_id | string | ID do jogador |
+| command | string | O comando a ser executado |
+| args | string[] | Array de argumentos a serem passados para o comando |
+| execute_in | number | Tempo em segundos para aguardar antes de executar o comando |
+
+## Exemplo
+
+```lua
+local CentralCart = exports[GetCurrentResourceName()]
+
+-- Agenda um comando para remover o grupo de um jogador após 30 dias
+CentralCart:schedule(user_id, 'removeGroup', { user_id, group }, 86400 * 30)
+```
+
+## Casos de uso
+
+- Executar comandos quando o jogador se conecta
+- Agendar remoções de VIPs, veículos, benefícios e outros

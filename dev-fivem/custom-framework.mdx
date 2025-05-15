@@ -1,0 +1,62 @@
+---
+title: 'Framework própria'
+description: 'Configure as binds para integrar com sua framework personalizada'
+---
+
+## Introdução
+
+O sistema de binds permite que você integre a CentralCart com sua própria framework, definindo como os dados dos jogadores serão obtidos.
+
+## Configuração
+
+1. Primeiro, altere o parâmetro `framework` para `"blank"` no arquivo de configuração da CentralCart;
+2. Crie um novo arquivo `.lua` dentro da pasta `extensions` do script.
+
+## Binds Disponíveis
+
+| Bind | Parâmetro | Descrição |
+|------|-----------|-----------|
+| `id` | `source` | Define o ID do jogador |
+| `source` | `player_id` | Define a source do jogador |
+| `name` | `source` | Define o nome do jogador |
+| `identity` | `player_id` | Define os dados de identidade do jogador |
+
+## Exemplo de implementação
+
+```lua
+local CentralCart = exports[GetCurrentResourceName()]
+
+-- Bind para retornar o ID do jogador
+CentralCart:bind("id", function(source)
+  -- Implemente aqui a lógica para obter o ID do jogador usando a source
+  return player_id
+end)
+
+-- Bind para retornar o source do jogador
+CentralCart:bind("source", function(player_id)
+  -- Implemente aqui a lógica para obter a source do jogador usando o player_id
+  return source
+end)
+
+-- Bind para retornar o nome do jogador
+CentralCart:bind("name", function(source)
+  -- Implemente aqui a lógica para obter o nome do jogador usando a source
+  return { "Nome", "Sobrenome" }
+end)
+
+-- Bind para retornar os dados de identidade do jogador (opcional)
+CentralCart:bind("identity", function(player_id)
+  -- Implemente aqui a lógica para obter os dados de identidade usando o player_id
+  return identity or nil
+end)
+
+-- Exemplo de uso do executeSchedule quando o jogador entra
+-- Altere o playerJoin pelo evento da sua base
+AddEventHandler('playerJoin', function(source)
+    -- Implemente aqui a lógica para obter o ID do jogador usando a source
+    local player_id = --
+
+    -- Chame a função para executar os agendamentos pendentes do jogador
+    CentralCart:executeSchedule(player_id)
+end)
+```

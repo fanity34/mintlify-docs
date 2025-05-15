@@ -55,7 +55,9 @@
             "pages": [
               "dev-fivem/extensions",
               "dev-fivem/custom-chat",
-              "dev-fivem/change-inserts"
+              "dev-fivem/change-inserts",
+              "dev-fivem/schedule",
+              "dev-fivem/custom-framework"
             ]
           }
         ]

@@ -44,36 +44,34 @@ O plugin para integração com pix in-game só irá funcionar, se o plugin princ
 
 ```yml
 Categories:
-  vips-1: # Slug da categoria
-    Slot: 1 # Posição do slot onde a categoria será exibida
-    ID: 388 # ID do item que representa a categoria
+  vips: #Nome da categoria
+    Slot: 1
+    ID: 388
     Data: 0
-    Name: '&aVIPs' #Nome da Categoria
-    Lore: # Descrição da categoria
+    Name: '&aVIPs'
+    Lore:
       - ''
       - '&eClique para selecionar.'
     Products:
-      vip-esmeralda: # Slug do produto
-        Slot: 28 # Posição do slot onde a categoria será exibida
-        ID: 351 # ID do item que representa o produto
+      vip-carvao: # Nome do produto
+        Slot: 28
+        ID: 351
         Data: 10
-        Name: '&4&lVIP Imperador' # Nome do produto
-        Lore: # Descrição do produto
-          - '&cPemanente'
+        Product-ID: 174876 # ID do produto
+        Name: '&aVIP'
+        Lore:
+          - '&8Pemanente'
           - ''
-          - '&a✔ &7Voar;'
-          - '&a✔ &7Criar clans;'
-          - '&a✔ &7/comercio para criar seu ponto de comércio;'
-          - '&a✔ &7/chapeu para colocar itens na cabeça.'
+          - '&a✔ &7Voar no Lobby'
+          - '&a✔ &7Criar clans'
           - ''
-          - '&7Preço: &a<value>' # Variável para o preço automático
+          - '&7Preço: &a<value>'
           - ''
           - '&eClique para comprar.'
-        Advantages: # Descrição da vantagens do produto
+        Advantages:
           - '     &a&lVIP &c(X)'
           - ''
           - '&a✔ &7Voar no Lobby'
           - '&a✔ &7Cosméticos'
           - '&a✔ &7Skin Customizada'
-          - '&c✖ &7Poder abusar'
 ```

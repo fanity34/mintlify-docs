@@ -3,7 +3,20 @@ title: Como configurar o sistema de pix in-game
 description: 'Nesse guia iremos mostrar como configurar o plugin para integrar o pix no servidor.'
 ---
 
-## Como funciona o plugin?
+## Guia em vídeo
+
+<iframe
+  width="100%"
+  height="422"
+  src="https://www.youtube.com/embed/-GDcv8WUpes?si=J3klK6XwPKttLwWO"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+
+## Passo a passo (Versão escrita)
 O sistema tem o intuito de facilitar a compra de beneficios in-game, otimizando a experiência do jogador e impulsionando a taxa de conversão.
 
 <Frame>
@@ -44,22 +57,22 @@ O plugin para integração com pix in-game só irá funcionar, se o plugin princ
 
 ```yml
 Categories:
-  vips: #Nome da categoria
-    Slot: 1
-    ID: 388
+  vips: # Nome da categoria
+    Slot: 1 # Slots onde a categoria vai ficar no menu
+    ID: 388 # ID do item
     Data: 0
-    Name: '&aVIPs'
-    Lore:
+    Name: '&aVIPs' #Titulo da categoria
+    Lore: # Descrição da categoria
       - ''
       - '&eClique para selecionar.'
     Products:
       vip-carvao: # Nome do produto
-        Slot: 28
-        ID: 351
+        Slot: 28 # Slots onde o produto vai ficar no menu
+        ID: 351 # ID do item
         Data: 10
         Product-ID: 174876 # ID do produto
-        Name: '&aVIP'
-        Lore:
+        Name: '&aVIP' # Titulo do produto
+        Lore: # Descrição do produto
           - '&8Pemanente'
           - ''
           - '&a✔ &7Voar no Lobby'

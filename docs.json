@@ -105,6 +105,7 @@
               {
                 "group": "Pedidos",
                 "pages": [
+                  "api-reference/endpoint/app/orders/list",
                   "api-reference/endpoint/app/orders/get",
                   "api-reference/endpoint/app/orders/update",
                   "api-reference/endpoint/app/orders/resend-commands"

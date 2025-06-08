@@ -1,0 +1,173 @@
+---
+title: "List Order"
+api: "GET https://api.centralcart.com.br/v1/app/order"
+authMethod: "bearer"
+description: "Retorna a lista de pedidos."
+---
+
+<ParamField query="status" type="string">
+  Status do pedido: APPROVED, REJECTED, CANCELED, REFUNDED, CHARGEDBACK
+</ParamField>
+
+<ParamField query="email" type="string">
+  Email do cliente
+</ParamField>
+
+<ParamField query="client_id" type="string">
+  ID do cliente
+</ParamField>
+
+### Response
+
+<ResponseField name="client_identifier" type="string">
+  Identificador do cliente
+</ResponseField>
+
+<ResponseField name="variables" type="string">
+  Variáveis de checkout
+</ResponseField>
+
+<ResponseField name="client_email" type="string">
+  O email do cliente
+</ResponseField>
+
+<ResponseField name="client_name" type="string">
+  O o nome do cliente
+</ResponseField>
+
+<ResponseField name="client_document" type="string | null">
+  O documento do cliente
+</ResponseField>
+
+<ResponseField name="client_phone" type="string | null">
+  O telefone do cliente
+</ResponseField>
+
+<ResponseField name="client_discord" type="string | null">
+  O Discord ID do cliente
+</ResponseField>
+
+<ResponseField name="price" type="string">
+  O valor total do pedido
+</ResponseField>
+
+<ResponseField name="net_received" type="string">
+  O valor recebido pelo gateway
+</ResponseField>
+
+<ResponseField name="internal_id" type="string">
+  O identificador do pedido
+</ResponseField>
+
+<ResponseField name="external_id" type="string">
+  O identificador do pedido pelo gateway
+</ResponseField>
+
+<ResponseField name="promo_code" type="string | null">
+  Cupom de desconto utilizado na compra
+</ResponseField>
+
+<ResponseField name="promo_type" type="string | null">
+  Tipo do cupom de desconto: `PERCENTAGE` ou `PRICE`
+</ResponseField>
+
+<ResponseField name="promo_value" type="string | null">
+  Valor do cupom de desconto
+</ResponseField>
+
+<ResponseField name="gateway" type="string">
+  Método de pagamento utilizado
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  Status do pedido: `APPROVED`, `REJECTED`, `CANCELED`, `REFUNDED`, `CHARGEDBACK`
+</ResponseField>
+
+<ResponseField name="currency" type="string">
+  Moeda utilizada na compra: `BRL`, `USD`, `EUR`
+</ResponseField>
+
+<ResponseField name="packages" type="array">
+  Pacotes do pedido
+</ResponseField>
+
+<ResponseExample>
+
+```json Response
+{
+  "meta": {
+    "total": 1,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1,
+    "first_page": 1,
+    "first_page_url": "/?page=1",
+    "last_page_url": "/?page=1",
+    "next_page_url": null,
+    "previous_page_url": null
+  },
+  "data": [
+    {
+      "store_id": 1,
+      "client_identifier": "1",
+      "variables": {
+        "client_identifier": "1"
+      },
+      "client_email": "support@centralcart.com.br",
+      "client_name": "Central Cart",
+      "client_document": null,
+      "client_phone": null,
+      "client_discord": null,
+      "price": 5,
+      "net_received": 5,
+      "internal_id": "1b2fe2a9697a0ac07ebd933309b4f9a8d1120c06",
+      "external_id": "REDACTED",
+      "promo_code": null,
+      "promo_type": null,
+      "promo_value": null,
+      "gateway": "PIX",
+      "status": "APPROVED",
+      "created_at": "2024-03-03T23:43:12.000-03:00",
+      "updated_at": "2024-03-03T23:43:12.000-03:00",
+      "currency": "BRL",
+      "packages": [
+        {
+          "id": 1,
+          "store_id": 1,
+          "package_id": 1,
+          "name": "VIP Inicial",
+          "price": 0,
+          "quantity": 1,
+          "created_at": "2024-03-03T23:43:12.000-03:00",
+          "updated_at": "2024-03-03T23:43:12.000-03:00",
+          "currency": "BRL",
+          "meta": {
+            "id": 1,
+            "category_id": 1,
+            "store_id": 1,
+            "position": 1,
+            "enabled": true,
+            "name": "VIP Inicial",
+            "type": "SINGLE",
+            "price": 0,
+            "expiry_days": 30,
+            "inventory_amount": null,
+            "per_user_limit": true,
+            "description": "Descrição do pacote",
+            "slug": "vip-inicial",
+            "image": "https://cdn.centralcart.com.br/stores/1/packages/af461565-e0c2-4be2-8902-ae283f9f6628.png",
+            "created_at": "2023-03-03T11:13:48.000-03:00",
+            "updated_at": "2024-03-03T17:41:38.000-03:00",
+            "price_display": "R$ 0,00"
+          }
+        }
+      ],
+      "price_display": "R$ 0,00",
+      "status_display": "PAGO",
+      "gateway_display": "Pix"
+    }
+  ]
+}
+```
+
+</ResponseExample>

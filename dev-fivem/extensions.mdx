@@ -66,7 +66,7 @@ AddEventHandler("centralcart.ready", function()
     if not source then
       -- Aqui criamos um agendamento, isso vai fazer o comando ser 
       -- executado assim que o player se conectar ao servidor
-      CentralCart:schedule(user_id, { "addPremium", user_id })
+      CentralCart:schedule(user_id, "addPremium", { "addPremium", user_id })
       return "OK (Scheduled)"
     end
 

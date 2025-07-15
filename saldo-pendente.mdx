@@ -29,7 +29,7 @@ Vamos imaginar que você realiza as seguintes vendas:
 
 ### Neste caso:
 
-1. A venda no valor de **{"R$"} 30** é superior aos **4%** das 3 vendas somadas, com isso entrará em rigor a ``regra 2``.
+1. A venda no valor de **{"R$"} 30** é superior aos **4%** das 3 vendas somadas, com isso entrará em rigor a [regra 2](/saldo-pendente#em-quanto-tempo-o-valor-é-liberado%3F).
 2. As duas vendas no valor de **{"R$"} 20** são liberadas para **saque imediato**.
 
 ```
@@ -37,13 +37,15 @@ R$30 ficará pendente até completar 24 horas.
 ```
 
 
-3. Após passar **24 horas**, entrará em vigor a ``regra 1``, com isso é  liberado **{"R$"} 27.2** para serem sacados e ficará pendente **{"R$"}2.8** referente aos **4%** das 3 vendas efetuadas.
+3. Após passar **24 horas**, entrará em vigor a [regra 1](/saldo-pendente#em-quanto-tempo-o-valor-é-liberado%3F), com isso é  liberado **{"R$"} 27.2** para serem sacados e ficará pendente **{"R$"}2.8** referente aos **4%** das 3 vendas efetuadas.
 
 ```
 As vendas foram realizadas no dia 10. Com isso, os R$ 2,80 
 serão liberados para saque no dia 25, quando completarem 15 dias.
 ```
-
+<Warning>
+O sistema analisará cada venda efetuada em sua loja e a regra com o maior valor será aplicada como saldo pendente.
+</Warning>
 
 ## **Qual a lógica?** 
 É importante manter um saldo na conta para cobrir possíveis reembolsos ou chargebacks.

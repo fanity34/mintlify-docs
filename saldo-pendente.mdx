@@ -1,6 +1,6 @@
 ---
 title: Saldo pendente
-description: 'Nesse guia iremos explicar como funciona o saldo pendente'
+description: 'Nesse guia iremos explicar como funciona o saldo pendente.'
 ---
 
 ## Por que meu dinheiro fica pendente?
@@ -11,31 +11,47 @@ description: 'Nesse guia iremos explicar como funciona o saldo pendente'
     </Check>
 
 ## **Em quanto tempo o valor é liberado?** 
-    Reservamos 4% do volume total de pagamentos dos últimos 15 dias ou o valor da maior venda nas últimas 24 horas, o maior desses valores ficará na reserva. 
+    ``Regra 1`` **->** Reservamos **4%** do volume total de pagamentos dos últimos ``15 dias.`` <br/>
+    ``Regra 2`` **->** Reservamos a maior venda nas últimas **24 horas** por ``1 dia.``
+    
+   <Icon icon="arrow-right" iconType="solid" /> O maior valor entre essas **2 regras** será a reserva temporariamente. 
+
+    **•** Você pode acompanhar o tempo que cada valor será liberado na aba: **Liberações**.
+
+<Frame>
+  ![Saldo pendente](/images/shared/pendente.png)
+</Frame>
     
 ## Exemplo na prática de liberação de saldo  
 Vamos imaginar que você realiza as seguintes vendas:
 
-**Venda 1:** 2 produtos de {"R$"} 20 <br/>
-**Venda 2:** 1 produto de {"R$"} 30 
+**No dia 10:** duas vendas no valor de **{"R$"} 20** e uma no valor de **{"R$"} 30**.<br/>
 
-**Neste caso:**
+### Neste caso:
 
-As vendas de {"R$"} 20 serão liberadas para saque imediato.  
-O valor de {"R$"} 30 ficará disponível em 24 horas.  
+1. A venda no valor de **{"R$"} 30** é superior aos **4%** das 3 vendas somadas, com isso entrará em rigor a ``regra 2``.
+2. As duas vendas no valor de **{"R$"} 20** são liberadas para **saque imediato**.
 
-<Warning>
-Se você vender um produto de {"R$"} 40 antes do término das 24 horas, os {"R$"} 30 serão liberados para saque imediato, e os {"R$"} 40 ficarão pendentes por 24 horas.
-</Warning>
-Se os 4% do volume total das vendas dos últimos 15 dias forem superiores à maior venda das últimas 24 horas, esses 4% ficarão pendentes em vez da maior venda.
+```
+R$30 ficará pendente até completar 24 horas.
+```
+
+
+3. Após passar **24 horas**, entrará em vigor a ``regra 1``, com isso é  liberado **{"R$"} 27.2** para serem sacados e ficará pendente **{"R$"}2.8** referente aos **4%** das 3 vendas efetuadas.
+
+```
+As vendas foram realizadas no dia 10. Com isso, os R$ 2,80 
+serão liberados para saque no dia 25, quando completarem 15 dias.
+```
+
 
 ## **Qual a lógica?** 
 É importante manter um saldo na conta para cobrir possíveis reembolsos ou chargebacks.
 
 A reserva evita que você faça uma venda, saque o valor e, em seguida, enfrente um chargeback ou reembolso sem ter saldo suficiente para cobrir, o que poderia gerar prejuízos para a Paguefy.
-<Info>
+<Note>
 Se você é um cliente de longa data com vendas recorrentes, entre em contato com nossa equipe para que possamos avaliar a remoção do saldo pendente.
-</Info>
+</Note>
 
   
 <Check>

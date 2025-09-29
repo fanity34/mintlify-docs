@@ -5,6 +5,10 @@ authMethod: "bearer"
 description: "Obtém os detalhes de um pedido."
 ---
 
+<ParamField path="order_id" type="string" required>
+  ID do pedido
+</ParamField>
+
 ### Response
 
 <ResponseField name="client_identifier" type="string">

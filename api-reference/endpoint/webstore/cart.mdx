@@ -1,0 +1,54 @@
+---
+title: "Cart Calculate"
+api: "POST https://api.centralcart.com.br/v1/webstore/cart"
+description: "Retorna detalhes dos pacotes do carrinho para exibição antes do checkout."
+---
+
+<ParamField header="x-store-domain" type="string" required>
+  Domínio da sua loja (ex: sualoja.centralcart.com.br)
+</ParamField>
+
+<ParamField body="items" type="array" required>
+  <ParamField body="id" type="number" required>
+    ID do pacote
+  </ParamField>
+  <ParamField body="quantity" type="number" required>
+    Quantidade desejada
+  </ParamField>
+  <ParamField body="fields" type="object">
+    Mapa de variáveis preenchidas do pacote
+  </ParamField>
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+[
+  {
+    "id": 1,
+    "category_id": 1,
+    "store_id": 1,
+    "position": 1,
+    "enabled": true,
+    "name": "VIP Inicial",
+    "type": "SINGLE",
+    "slug": "vip-inicial",
+    "image": "https://cdn.centralcart.com.br/stores/1/packages/image.png",
+    "fields": [
+      { "id": 1, "name": "nickname", "type": "TEXT", "description": "Seu nickname" }
+    ],
+    "pricing": {
+      "price": 10,
+      "compare_at": 20,
+      "percent_discount": -50
+    },
+    "stock": {
+      "quantity": 100,
+      "available": true,
+      "min_amount": 1
+    }
+  }
+]
+```
+
+</ResponseExample>

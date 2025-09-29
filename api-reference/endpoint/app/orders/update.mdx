@@ -1,12 +1,12 @@
 ---
 title: "Update Order"
-api: "PATCH https://api.centralcart.com.br/v1/app/order/{order-id}"
+api: "PATCH https://api.centralcart.com.br/v1/app/order/{order_id}"
 authMethod: "bearer"
 description: "Atualiza um pedido."
 ---
 
-<ParamField path="order-id" type="string" required>
-  O ID do pedido a ser atualizado
+<ParamField path="order_id" type="string" required>
+  ID do pedido
 </ParamField>
 
 <ParamField body="status" type="string">

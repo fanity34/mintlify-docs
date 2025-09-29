@@ -1,0 +1,87 @@
+---
+title: "List Packages"
+api: "GET https://api.centralcart.com.br/v1/webstore/package"
+description: "Lista pacotes disponíveis."
+---
+
+<ParamField header="x-store-domain" type="string" required>
+  Domínio da sua loja (ex: sualoja.centralcart.com.br)
+</ParamField>
+
+<ParamField query="q" type="string">
+  Busca por nome
+</ParamField>
+
+<ParamField query="order_by" type="string">
+  Ordenação por `id` ou `price` no formato `campo:asc|desc` (padrão: `id:asc`)
+</ParamField>
+
+<ParamField query="category_id" type="string | number">
+  Filtra por categoria. Use `all` para somente pacotes com categoria.
+</ParamField>
+
+<ParamField query="id" type="number | number[]">
+  Filtra por um ou mais IDs
+</ParamField>
+
+<ParamField query="include_variations" type="boolean">
+  Inclui variações quando `true` (por padrão retorna apenas o pacote principal)
+</ParamField>
+
+<ParamField query="load_parent" type="boolean">
+  Inclui dados resumidos do pacote pai
+</ParamField>
+
+<ParamField query="limit" type="number">
+  Quantidade por página (default interno)
+</ParamField>
+
+<ParamField query="page" type="number">
+  Página para paginação (default: 1)
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "meta": {
+    "total": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1
+  },
+  "data": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "store_id": 1,
+      "position": 1,
+      "enabled": true,
+      "name": "VIP Inicial",
+      "type": "SINGLE",
+      "slug": "vip-inicial",
+      "image": "https://cdn.centralcart.com.br/stores/1/packages/image.png",
+      "pricing": {
+        "price": 10,
+        "compare_at": 20,
+        "percent_discount": -50
+      },
+      "stock": {
+        "quantity": 100,
+        "available": true,
+        "min_amount": 1
+      },
+      "fields": [
+        {
+          "id": 1,
+          "name": "nickname",
+          "type": "TEXT",
+          "description": "Seu nickname"
+        }
+      ]
+    }
+  ]
+}
+```
+
+</ResponseExample>

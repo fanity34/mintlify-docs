@@ -1,0 +1,53 @@
+---
+title: "List Posts"
+api: "GET https://api.centralcart.com.br/v1/webstore/post"
+description: "Lista posts recentes do blog da loja."
+---
+
+<ParamField header="x-store-domain" type="string" required>
+  Domínio da sua loja (ex: sualoja.centralcart.com.br)
+</ParamField>
+
+<ParamField query="page" type="number">
+  Página para paginação (default: 1)
+</ParamField>
+
+### Response
+
+<ResponseField name="meta" type="object">
+  Metadados de paginação
+</ResponseField>
+
+<ResponseField name="data" type="array">
+  Lista de posts
+</ResponseField>
+
+<ResponseExample>
+
+```json Response
+{
+  "meta": {
+    "total": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1
+  },
+  "data": [
+    {
+      "id": 1,
+      "store_id": 1,
+      "title": "Bem-vindo à CentralCart",
+      "content": "<p>Conteúdo do post</p>",
+      "author": "Equipe CentralCart",
+      "image": "https://cdn.centralcart.com.br/stores/1/posts/cover.png",
+      "slug": "bem-vindo-a-centralcart",
+      "published_at": "03 mar 2024",
+      "path": "/post/03/03/2024/bem-vindo-a-centralcart",
+      "created_at": "2024-03-03T23:43:12.000-03:00",
+      "updated_at": "2024-03-03T23:43:12.000-03:00"
+    }
+  ]
+}
+```
+
+</ResponseExample>

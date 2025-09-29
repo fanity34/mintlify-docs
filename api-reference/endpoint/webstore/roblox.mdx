@@ -1,0 +1,26 @@
+---
+title: "Find Roblox User"
+api: "GET https://api.centralcart.com.br/v1/webstore/roblox"
+description: "Busca usuário do Roblox por username."
+---
+
+<ParamField header="x-store-domain" type="string" required>
+  Domínio da sua loja (ex: sualoja.centralcart.com.br)
+</ParamField>
+
+<ParamField query="username" type="string" required>
+  Username do Roblox
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "id": 123456,
+  "username": "RobloxUser",
+  "display_name": "Roblox User",
+  "avatar_url": "https://tr.rbxcdn.com/..../150/150/AvatarHeadshot/Png"
+}
+```
+
+</ResponseExample>

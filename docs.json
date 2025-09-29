@@ -127,6 +127,15 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Webstore API (Public)",
+            "pages": [
+              "api-reference/endpoint/webstore/posts",
+              "api-reference/endpoint/webstore/discount",
+              "api-reference/endpoint/webstore/cart",
+              "api-reference/endpoint/webstore/checkout"
+            ]
           }
         ]
       }

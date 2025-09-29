@@ -1,9 +1,12 @@
 ---
-title: "Create Checkout"
-api: "POST https://api.centralcart.com.br/v1/app/checkout"
-authMethod: "bearer"
-description: "Cria um pedido e retorna os detalhes do checkout."
+title: "Create Webstore Checkout"
+api: "POST https://api.centralcart.com.br/v1/webstore/checkout"
+description: "Cria um checkout público e retorna a URL/código de pagamento."
 ---
+
+<ParamField header="x-store-domain" type="string" required>
+  Domínio da sua loja (ex: sualoja.centralcart.com.br)
+</ParamField>
 
 <ParamField body="gateway" type="string" required>
   Gateway: `PIX`, `MERCADOPAGO`, `STRIPE`, `PAYPAL`, `PICPAY`, `PAGSEGURO`, `PAGARME`, `OTHER`

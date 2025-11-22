@@ -1,0 +1,61 @@
+---
+title: "List Affiliate"
+api: "GET https://api.centralcart.com.br/v1/app/affiliate"
+authMethod: "bearer"
+description: "Retorna a lista de afiliados criados."
+---
+
+<ParamField query="page" type="number">
+  Número da página para paginação
+</ParamField>
+
+<ParamField query="search" type="string">
+  Busca por nome ou email do afiliado
+</ParamField>
+
+<ParamField query="email" type="string">
+  Filtrar por email específico do afiliado
+</ParamField>
+
+<ParamField query="all" type="boolean">
+  Se `true`, retorna todos os afiliados sem paginação
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "meta": {
+    "total": 1,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1,
+    "first_page": 1,
+    "first_page_url": "/?page=1",
+    "last_page_url": "/?page=1",
+    "next_page_url": null,
+    "previous_page_url": null
+  },
+  "data": [
+    {
+      "id": 1,
+      "store_id": 1,
+      "name": "Afiliado Exemplo",
+      "ref_code": "AFFILIATE001",
+      "percent_commission": 10,
+      "balance": 150.50,
+      "min_withdraw": 50.00,
+      "email": "afiliado@example.com",
+      "self_affiliated": false,
+      "withdraw_settings": null,
+      "revenue": 1500.00,
+      "sales": 15,
+      "created_at": "2024-01-16T15:12:36.000-03:00",
+      "updated_at": "2024-01-16T15:12:36.000-03:00"
+    }
+  ]
+}
+```
+
+</ResponseExample>
+

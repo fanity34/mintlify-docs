@@ -1,0 +1,21 @@
+---
+title: "Delete Affiliate"
+api: "DELETE https://api.centralcart.com.br/v1/app/affiliate/{affiliate-id}"
+authMethod: "bearer"
+description: "Deleta um afiliado."
+---
+
+<ParamField path="affiliate-id" type="string" required>
+  O ID do afiliado a ser deletado
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Afiliado deletado com sucesso!"
+}
+```
+
+</ResponseExample>
+

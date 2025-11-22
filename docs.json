@@ -105,6 +105,17 @@
                 ]
               },
               {
+                "group": "Afiliados",
+                "pages": [
+                  "api-reference/endpoint/app/affiliates/list",
+                  "api-reference/endpoint/app/affiliates/get",
+                  "api-reference/endpoint/app/affiliates/create",
+                  "api-reference/endpoint/app/affiliates/update",
+                  "api-reference/endpoint/app/affiliates/delete",
+                  "api-reference/endpoint/app/affiliates/create-withdraw-request"
+                ]
+              },
+              {
                 "group": "Pedidos",
                 "pages": [
                   "api-reference/endpoint/app/orders/list",

@@ -1,0 +1,41 @@
+---
+title: "Get Affiliate"
+api: "GET https://api.centralcart.com.br/v1/app/affiliate/{affiliate-id}"
+authMethod: "bearer"
+description: "Obtém os detalhes de um afiliado."
+---
+
+<ParamField path="affiliate-id" type="string" required>
+  ID do afiliado
+</ParamField>
+
+<ParamField query="statistics" type="string">
+  Se `true`, inclui estatísticas de receita e vendas do afiliado
+</ParamField>
+
+<ResponseExample>
+
+```json Response
+{
+  "id": 1,
+  "store_id": 1,
+  "name": "Afiliado Exemplo",
+  "ref_code": "AFFILIATE001",
+  "percent_commission": 10,
+  "balance": 150.50,
+  "min_withdraw": 50.00,
+  "email": "afiliado@example.com",
+  "self_affiliated": false,
+  "withdraw_settings": null,
+  "dash_secret": "REDACTED",
+  "created_at": "2024-01-16T15:12:36.000-03:00",
+  "updated_at": "2024-01-16T15:12:36.000-03:00",
+  "statistics": {
+    "revenue": 1500.00,
+    "sales": 15
+  }
+}
+```
+
+</ResponseExample>
+
